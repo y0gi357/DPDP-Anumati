@@ -2,6 +2,8 @@
 
 ## Unreleased — community release preparation
 
+- Pin Next.js and its locked runtime/compiler packages to 16.4.6. Existing deployments must reinstall dependencies and rebuild to receive the update.
+
 - Department sub-functions with multiple SPOCs, role selections, primary contact and detailed contact fields.
 - Legacy SPOC backfill, tenant-isolated contacts, and roster-aware reports, remediation owners and gap checks.
 

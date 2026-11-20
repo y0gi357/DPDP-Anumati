@@ -32,3 +32,9 @@ The history scan is heuristic and does not prove absence of secrets or private d
 - Production build (--webpack): blocked by the existing TypeScript --showConfig output parsing error.
 
 Apply the new migration and regenerate Prisma before starting the updated application; see DEPARTMENTS.md.
+
+## Next.js dependency update — 20 November 2026
+
+The manifest pins Next.js to 16.4.6 and the regenerated lockfile records matching @next/env and platform compiler packages, with integrity hashes. npm ci --offline --ignore-scripts --dry-run completed successfully. This verifies lockfile resolution only, not package installation or execution.
+
+Actual installation was blocked by EAI_AGAIN resolving registry.npmjs.org. node_modules still contains Next.js 16.4.2. No patched-runtime build, browser or regression result is claimed. Complete npm ci, regenerate the Prisma client as needed, run the project checks, and rebuild/restart each deployment before treating it as patched. The separate rights-request work remains unfinished.
