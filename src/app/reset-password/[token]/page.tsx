@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import bcrypt from "bcryptjs";
@@ -32,6 +33,7 @@ export default async function ResetPassword({ params, searchParams }: { params: 
 
   return (
     <div className="auth">
+      <ProductBrand />
       <h1>Choose a new password</h1>
       {!valid ? (
         <div className="card"><p style={{ margin: 0 }}>This link has expired or was already used. <Link href="/forgot-password">Request a new one</Link>.</p></div>

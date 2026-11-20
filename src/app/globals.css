@@ -48,3 +48,13 @@ td, th { text-align: left; padding: 8px; border-bottom: 1px solid var(--border);
   .main { flex-basis: auto; width: 100%; padding: 16px; }
   .grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Product identity is separate from the active organisation. */
+.product-brand { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
+.product-name { color: var(--accent); font-size: 28px; line-height: 1.2; font-weight: 750; letter-spacing: -.04em; }
+.product-tagline { color: var(--muted); font-size: 12px; font-weight: 400; }
+.side .product-brand { margin-bottom: 14px; }
+.side .product-name { font-size: 26px; }
+.brand-organisation { padding-top: 10px; border-top: 1px solid var(--border); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.privacy-brand { max-width: 900px; margin: 24px auto 0; padding: 0 20px; }
+.privacy-brand .product-brand { margin-bottom: 0; }

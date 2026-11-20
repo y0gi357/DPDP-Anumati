@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -46,7 +47,7 @@ export default async function InvitePage({ params, searchParams }: { params: Pro
 
   if (!loaded) {
     return (
-      <div className="auth"><h1>Invitation not valid</h1>
+      <div className="auth"><ProductBrand /><h1>Invitation not valid</h1>
         <div className="card"><p style={{ margin: 0 }}>This invitation has expired, was cancelled, or was already used. Ask the person who invited you to send a new one.</p></div>
         <p className="muted"><Link href="/login">Go to sign in</Link></p></div>
     );
@@ -88,6 +89,7 @@ export default async function InvitePage({ params, searchParams }: { params: Pro
 
   return (
     <div className="auth">
+      <ProductBrand />
       <h1>Join {orgName}</h1>
       <p className="muted">You were invited as {ROLE_LABELS[inv.role as RoleName]} using <strong>{inv.email}</strong>.</p>
       {error && <div className="err" style={{ marginBottom: 10 }}>{error}</div>}

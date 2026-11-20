@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import { redirect } from "next/navigation";
 import { auth, signOut, unstable_update } from "@/auth";
 import { requireSession } from "@/lib/session";
@@ -12,7 +13,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const memberships = await withTenant(s, (tx) =>
     tx.membership.findMany({ where: { userId: s.userId }, include: { org: { select: { id: true, name: true } } }, orderBy: { id: "asc" } }),
   );
-  const orgName = memberships.find((m) => m.orgId === s.orgId)?.org.name ?? "DPDPA Platform";
+  const orgName = memberships.find((m) => m.orgId === s.orgId)?.org.name ?? "Your organisation";
 
   async function logout() {
     "use server";
@@ -42,8 +43,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <div className="shell">
       <nav className="side" aria-label="Main">
         <div className="brand">
-          {orgName}
-          <div className="muted" style={{ fontSize: 11, fontWeight: 500, letterSpacing: ".06em", textTransform: "uppercase" }}>DPDPA implementation</div>
+          <ProductBrand />
+          <div className="brand-organisation">{orgName}</div>
         </div>
         {memberships.length > 1 && (
           <form action={switchOrg} className="row" style={{ margin: "0 8px 8px" }}>

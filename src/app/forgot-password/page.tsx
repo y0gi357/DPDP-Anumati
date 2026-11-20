@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -32,6 +33,7 @@ export default async function ForgotPassword({ searchParams }: { searchParams: P
 
   return (
     <div className="auth">
+      <ProductBrand />
       <h1>Reset your password</h1>
       {sent ? (
         <div className="card"><p style={{ margin: 0 }}>If an account exists for that address, we have sent a link that works for one hour. Check your inbox and spam folder.</p></div>

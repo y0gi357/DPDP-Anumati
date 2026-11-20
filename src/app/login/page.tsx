@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AuthError } from "next-auth";
@@ -27,8 +28,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 
   return (
     <div className="auth">
+      <ProductBrand />
       <h1>Sign in</h1>
-      <p className="muted">DPDPA Compliance Platform</p>
       {reset && <div style={{ color: "var(--ok)", marginBottom: 10 }}>Password changed. Sign in with the new one.</div>}
       {invited && <div className="notice">Sign in with the account for the invited email address to continue.</div>}
       {error && NOTES[error] && <div className="notice">{NOTES[error]}</div>}

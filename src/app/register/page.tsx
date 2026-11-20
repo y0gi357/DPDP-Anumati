@@ -1,3 +1,4 @@
+import { ProductBrand } from "@/components/ProductBrand";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -48,6 +49,7 @@ export default async function RegisterPage({ searchParams }: { searchParams: Pro
 
   return (
     <div className="auth">
+      <ProductBrand />
       <h1>Create your organisation</h1>
       {closed ? <div className="notice">Sign-up is closed. Ask your administrator for an invitation.</div> : (
         <form action={register} className="card">
